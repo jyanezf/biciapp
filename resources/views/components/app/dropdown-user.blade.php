@@ -1,0 +1,92 @@
+<li class="nav-item navbar-dropdown dropdown-user dropdown">
+    <a
+        class="nav-link dropdown-toggle hide-arrow"
+        data-bs-toggle="dropdown"
+        href="javascript:void(0);"
+    >
+        <div class="avatar avatar-online">
+            <img
+                alt
+                class="w-px-40 h-auto rounded-circle"
+                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png"
+            />
+        </div>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+            <a
+                class="dropdown-item"
+                href="javascript:void(0);"
+            >
+                <div class="d-flex">
+                    <div class="flex-shrink-0 me-3">
+                        <div class="avatar avatar-online">
+                            <img
+                                alt
+                                class="w-px-40 h-auto rounded-circle"
+                                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png"
+                            />
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
+                        <small class="text-muted">{{ auth()->user()->roles()->first()->display_name }}</small>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <li>
+            <div class="dropdown-divider"></div>
+        </li>
+        <li>
+            <a
+                class="dropdown-item"
+                href="{{ route('users.settings', auth()->user()) }}"
+            >
+                <i class='bx bxs-user-account me-2'></i>
+                <span class="align-middle">Cuenta</span>
+            </a>
+        </li>
+        <li>
+            <a
+                class="dropdown-item"
+                href="{{ route('users.settings', auth()->user()) }}"
+            >
+                <i class="bx bx-cog me-2"></i>
+                <span class="align-middle">Ajustes</span>
+            </a>
+        </li>
+
+        <li>
+            <a
+                class="dropdown-item"
+                href="{{ route('apartments.index') }}"
+            >
+                <i class='bx bx-building-house me-2'></i>
+                <span class="align-middle">Apartamentos</span>
+            </a>
+        </li>
+        <li>
+            <div class="dropdown-divider"></div>
+        </li>
+        <li>
+            <a
+                class="dropdown-item"
+                href="/cerrar-sesion"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"
+            >
+                <i class="bx bx-power-off me-2"></i>
+                <span class="align-middle">Cerrar sesión</span>
+            </a>
+            <form
+                action="{{ route('logout') }}"
+                class="d-none"
+                id="logout-form"
+                method="POST"
+            >
+                @csrf
+            </form>
+        </li>
+    </ul>
+</li>
