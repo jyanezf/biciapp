@@ -8,7 +8,7 @@
             <img
                 alt
                 class="w-px-40 h-auto rounded-circle"
-                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png"
+                src="https://technext.github.io/stisla-1/assets/img/avatar/avatar-1.png"
             />
         </div>
     </a>
@@ -24,7 +24,7 @@
                             <img
                                 alt
                                 class="w-px-40 h-auto rounded-circle"
-                                src="https://demos.themeselection.com/sneat-bootstrap-html-admin-template-free/assets/img/avatars/1.png"
+                                src="https://technext.github.io/stisla-1/assets/img/avatar/avatar-1.png"
                             />
                         </div>
                     </div>
@@ -43,27 +43,8 @@
                 class="dropdown-item"
                 href="{{ route('users.settings', auth()->user()) }}"
             >
-                <i class='bx bxs-user-account me-2'></i>
-                <span class="align-middle">Cuenta</span>
-            </a>
-        </li>
-        <li>
-            <a
-                class="dropdown-item"
-                href="{{ route('users.settings', auth()->user()) }}"
-            >
                 <i class="bx bx-cog me-2"></i>
                 <span class="align-middle">Ajustes</span>
-            </a>
-        </li>
-
-        <li>
-            <a
-                class="dropdown-item"
-                href="{{ route('apartments.index') }}"
-            >
-                <i class='bx bx-building-house me-2'></i>
-                <span class="align-middle">Apartamentos</span>
             </a>
         </li>
         <li>

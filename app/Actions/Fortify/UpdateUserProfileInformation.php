@@ -30,6 +30,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ],
 
             'phone' => 'required',
+            'apartment' => 'required',
 
         ])->validateWithBag('updateProfileInformation');
 
@@ -41,6 +42,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'name' => $input['name'],
                 'email' => $input['email'],
                 'phone' => $input['phone'],
+                'apartment' => $input['apartment'],
             ])->save();
         }
     }
@@ -58,6 +60,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => $input['name'],
             'email' => $input['email'],
             'phone' => $input['phone'],
+            'apartment' => $input['apartment'],
             'email_verified_at' => null,
         ])->save();
 

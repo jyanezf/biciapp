@@ -24,6 +24,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
+    
     Route::get('/ajustes-de-perfil/{user}', function (User $user) {
         return view('users.settings', compact('user'));
     })->name('users.settings');
@@ -32,5 +33,4 @@ Route::middleware('auth')->group(function () {
     Route::get('/bicicletas/ocupadas', [BikeController::class, 'busy'])->name('bikes.busy');
     Route::resource('bicicletas', BikeController::class)->parameters(['bicicletas' => 'bike'])->except('show')->names('bikes');
 
-    Route::resource('apartamentos', ApartmentController::class)->parameters(['apartamentos' => 'apartment'])->except('show')->names('apartments');
 });
