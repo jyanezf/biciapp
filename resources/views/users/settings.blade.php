@@ -3,6 +3,15 @@
         Ajustes de usuario
         </x-slot>
 
+        <ul class="nav nav-pills flex-column flex-md-row mb-3">
+            <li class="nav-item">
+                <a
+                    class="nav-link active"
+                    href="{{ route('bikes.index') }}"
+                > Bicicletas</a>
+            </li>
+        </ul>
+
         <div class="card mb-4">
             <h5 class="card-header">Detalles del perfil</h5>
 
@@ -158,10 +167,6 @@
                             class="btn btn-primary me-2"
                             type="submit"
                         >Guardar cambios</button>
-                        <button
-                            class="btn btn-outline-secondary"
-                            type="reset"
-                        >Cancelar</button>
                     </div>
                 </form>
             </div>

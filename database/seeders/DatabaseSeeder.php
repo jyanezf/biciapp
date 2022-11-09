@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(LaratrustSeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(ApartmentSeeder::class);
+        
 
         Bike::factory(10)->create();
     }
