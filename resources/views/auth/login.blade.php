@@ -51,17 +51,11 @@
                                     placeholder="Ingresa tu correo"
                                     type="text"
                                 />
+                                @error('email')
+                                    <div class="form-text text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3 form-password-toggle">
-                                <div class="d-flex justify-content-between">
-                                    <label
-                                        class="form-label"
-                                        for="password"
-                                    >Contraseña</label>
-                                    <a href="#">
-                                        <small>¿Has olvidado tu contraseña?</small>
-                                    </a>
-                                </div>
                                 <div class="input-group input-group-merge">
                                     <input
                                         aria-describedby="password"
@@ -73,6 +67,9 @@
                                     />
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
+                                @error('password')
+                                    <div class="form-text text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <div class="form-check">

@@ -30,7 +30,26 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             ],
 
             'phone' => 'required',
-            'apartment' => 'required',
+            'apartment' => [
+                'required',
+                Rule::in([
+                    '107-1',
+                    '210',
+                    '305',
+                    '306',
+                    '404',
+                    '406',
+                    '502-a',
+                    '502-n',
+                    '506-1',
+                    '508',
+                    '106',
+                    '107-2',
+                    '109',
+                    '303',
+                    '506-2',
+                ]),
+            ]
 
         ])->validateWithBag('updateProfileInformation');
 

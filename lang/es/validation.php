@@ -129,6 +129,10 @@ return [
         'password' => [
             'min' => 'La :attribute debe contener más de :min caracteres',
         ],
+        'apartment' => [
+            'in' => 'El :attribute es inaválido',
+        ],
+        
     ],
     'attributes'           => [
         'address'               => 'dirección',
@@ -167,5 +171,6 @@ return [
         'year'                  => 'año',
         'reference'             => 'referencia',
         'serial_number'         => 'número de serie',
+        'apartment'             => 'apartamento'
     ],
 ];

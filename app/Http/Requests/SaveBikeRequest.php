@@ -31,7 +31,7 @@ class SaveBikeRequest extends FormRequest
                 'max:25',
                 Rule::unique('bikes')->ignore($this->route('bike')),
             ],
-            'serial_number' => ['string', 'max:25'],
+            'serial_number' => ['max:25'],
         ];
     }
 }

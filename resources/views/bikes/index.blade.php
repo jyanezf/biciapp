@@ -6,6 +6,14 @@
 
     {{-- Buttons --}}
 
+    @if (session('save') == 'store')
+        <div class="alert alert-success" role="alert">Bicicleta registrada</div>
+    @endif
+
+    @if (session('save') == 'update')
+        <div class="alert alert-success" role="alert">Bicicleta actualizada</div>
+    @endif
+
     <div class="d-flex justify-content-end mb-4 gap-3">
         @permission('bikes-create')
             <a

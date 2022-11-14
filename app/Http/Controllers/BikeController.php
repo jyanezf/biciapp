@@ -80,7 +80,7 @@ class BikeController extends Controller
             'serial_number' => $request->input('serial_number'),
         ]);
 
-        return redirect()->route('bikes.index');
+        return redirect()->route('bikes.index')->with('save', 'store');
     }
 
     /**
@@ -120,7 +120,7 @@ class BikeController extends Controller
             'serial_number' => $request->input('serial_number'),
         ]);
 
-        return redirect()->route('bikes.index');
+        return redirect()->route('bikes.index')->with('save', 'update');
     }
 
     /**

@@ -3,6 +3,10 @@
         Ajustes de usuario
         </x-slot>
 
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">Información de perfil actualizada</div>
+        @endif
+
         <ul class="nav nav-pills flex-column flex-md-row mb-3">
             <li class="nav-item">
                 <a
@@ -39,7 +43,9 @@
                                 value="{{ old('name', $user->name) }}"
                             />
                         </div>
-
+                        @error('name', 'updateProfileInformation')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="mb-3 col-md-6">
                             <label
                                 class="form-label"
@@ -53,6 +59,9 @@
                                 type="text"
                                 value="{{ old('email', $user->email) }}"
                             />
+                            @error('email', 'updateProfileInformation')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label
@@ -84,6 +93,9 @@
                                     value="{{ old('phone', $user->phone) }}"
                                 />
                             </div>
+                            @error('phone', 'updateProfileInformation')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                         <div class="mb-3 col-md-6">
                             <label
@@ -95,6 +107,7 @@
                                 id="apartment"
                                 name="apartment"
                             >
+                                <option>Seleccione apartamento</option>
                                 <optgroup label="Ingrumá 1">
                                     <option
                                         @if ('107-1' == old('apartment', $user->apartment)) selected @endif
@@ -160,6 +173,9 @@
                                     >506</option>
                                 </optgroup>
                             </select>
+                            @error('apartment', 'updateProfileInformation')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="mt-2">

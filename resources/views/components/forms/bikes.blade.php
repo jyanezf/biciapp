@@ -36,10 +36,6 @@
                             value="{{ old('reference', $bike->reference) }}"
                         >
                     </div>
-                    @error('reference')
-                        <div class="form-text text-danger">{{ $message }}</div>
-                    @enderror
-
                 </div>
 
             </div>
