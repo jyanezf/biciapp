@@ -123,7 +123,7 @@
                         @if ($bike->status == 'available')
                             <a
                                 class="card-link"
-                                href=""
+                                href="{{ route('bikes.loan', $bike)}}"
                             >Usar</a>
                             <button
                                 class="btn btn-link"
@@ -138,7 +138,7 @@
                             >Usar</button>
                             <a
                                 class="card-link"
-                                href=""
+                                href="{{ route('bikes.loan', $bike)}}"
                             >Entregar</a>
                         @endif
                     </div>

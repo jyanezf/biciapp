@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/bicicletas/disponibles', [BikeController::class, 'available'])->name('bikes.available');
     Route::get('/bicicletas/ocupadas', [BikeController::class, 'busy'])->name('bikes.busy');
+    Route::get('/bicicletas/{bike}/prestamo', [BikeController::class, 'loan'])->name('bikes.loan');
+    Route::put('/bicicletas/{bike}/prestar', [BikeController::class, 'toLoan'])->name('bikes.toLoan');
+    
     Route::resource('bicicletas', BikeController::class)->parameters(['bicicletas' => 'bike'])->except('show')->names('bikes');
 
 });

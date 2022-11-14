@@ -89,9 +89,23 @@ class BikeController extends Controller
      * @param  \App\Models\Bike  $bike
      * @return \Illuminate\Http\Response
      */
-    public function show(Bike $bike)
+
+    public function loan(Bike $bike)
     {
-        //
+        return view('bikes.loan', compact('bike'));
+    }
+
+    public function toLoan(Bike $bike)
+    {
+        if ($bike == 'available') {
+            $bike->status = 'busy';
+        }
+
+        if ($bike == 'busy') {
+            $bike->status = 'available';
+        }
+
+        $bike->save();
     }
 
     /**
