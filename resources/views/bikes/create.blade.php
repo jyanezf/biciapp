@@ -7,6 +7,7 @@
         action={{ route('bikes.store', $bike) }}
         class="basic-info needs-validation"
         method="POST"
+        enctype="multipart/form-data"
     >
         <x-forms.bikes :bike="$bike">
             <x-slot:letterTitle>

@@ -37,7 +37,27 @@
                         >
                     </div>
                 </div>
-
+            </div>
+            <div class="row mb-3">
+                <label
+                    class="col-sm-2 form-label"
+                    for="basic-icon-default-message"
+                >Comentario</label>
+                <div class="col-sm-10">
+                    <div class="input-group input-group-merge">
+                        <span
+                            class="input-group-text"
+                            id="basic-icon-default-message2"
+                        ><i class="bx bx-comment"></i></span>
+                        <textarea
+                            aria-describedby="basic-icon-default-message2"
+                            aria-label="De regreso se pincho una llanta o un pedal estaba roto cuando la tomé"
+                            class="form-control"
+                            id="basic-icon-default-message"
+                            placeholder="De regreso se pincho una llanta o un pedal estaba roto cuando la tomé"
+                        ></textarea>
+                    </div>
+                </div>
             </div>
             <div class="row justify-content-end">
                 <div class="col-sm-10">

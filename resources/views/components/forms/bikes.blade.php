@@ -36,6 +36,9 @@
                             value="{{ old('reference', $bike->reference) }}"
                         >
                     </div>
+                    @error('reference')
+                        <div class="form-text text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
 
             </div>
@@ -64,6 +67,20 @@
                     @error('serial_number')
                         <div class="form-text text-danger">{{ $message }}</div>
                     @enderror
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label
+                    class="col-sm-2 col-form-label"
+                    for="formFile"
+                >Imagen</label>
+                <div class="col-sm-10">
+                    <input
+                        class="form-control"
+                        id="photo"
+                        name="photo"
+                        type="file"
+                    />
                 </div>
             </div>
             <div class="row justify-content-end">

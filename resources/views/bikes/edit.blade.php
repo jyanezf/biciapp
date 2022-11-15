@@ -7,6 +7,7 @@
         action={{ route('bikes.update', $bike) }}
         class="basic-info"
         method="POST"
+        enctype="multipart/form-data"
     >
         @method('patch')
         <x-forms.bikes :bike="$bike">

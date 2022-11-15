@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SaveBikeRequest;
 use App\Models\Bike;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class BikeController extends Controller
@@ -74,11 +76,24 @@ class BikeController extends Controller
      */
     public function store(SaveBikeRequest $request)
     {
-        Bike::create([
+        $bike = Bike::create([
             'reference' => $request->input('reference'),
             'slug' => Str::slug($request->input('reference'), '-'),
             'serial_number' => $request->input('serial_number'),
         ]);
+
+        if ($request->hasFile('photo')) {
+
+            $url = Storage::disk('s3')->put('bikes/photos', $request->file('photo'));
+            
+            if (isset($bike->photo)) {
+                Storage::delete($bike->photo);
+            }
+
+            $bike->photo = $url;
+
+            $bike->save();
+        }
 
         return redirect()->route('bikes.index')->with('save', 'store');
     }
@@ -97,15 +112,15 @@ class BikeController extends Controller
 
     public function toLoan(Bike $bike)
     {
-        if ($bike == 'available') {
+        if ($bike->status == 'available') {
             $bike->status = 'busy';
-        }
-
-        if ($bike == 'busy') {
+        }else{
             $bike->status = 'available';
         }
 
         $bike->save();
+
+        return redirect()->route('bikes.index');
     }
 
     /**
@@ -134,6 +149,19 @@ class BikeController extends Controller
             'serial_number' => $request->input('serial_number'),
         ]);
 
+        if ($request->hasFile('photo')) {
+
+            $url = Storage::disk('s3')->put('bikes/photos', $request->file('photo'));
+            
+            if (isset($bike->photo)) {
+                Storage::delete($bike->photo);
+            }
+
+            $bike->photo = $url;
+
+            $bike->save();
+        }
+
         return redirect()->route('bikes.index')->with('save', 'update');
     }
 
@@ -145,6 +173,10 @@ class BikeController extends Controller
      */
     public function destroy(Bike $bike)
     {
+        if (isset($bike->photo)) {
+            Storage::delete($bike->photo);
+        }
+
         $bike->delete();
 
         return redirect()->route('bikes.index');

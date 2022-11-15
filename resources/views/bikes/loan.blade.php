@@ -15,7 +15,7 @@
             </x-slot>
             <x-slot:textButton>
                 @if ($bike->status == 'available')
-                    {{ 'Prestar' }}
+                    {{ 'Tomar' }}
                 @else
                     {{ 'Entregar' }}
                 @endif
