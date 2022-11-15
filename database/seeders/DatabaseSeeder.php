@@ -22,6 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         
 
-        Bike::factory(10)->create();
+        // Bike::factory(10)->create();
     }
 }

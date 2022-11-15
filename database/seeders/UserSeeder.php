@@ -17,18 +17,19 @@ class UserSeeder extends Seeder
     {
         User::factory()->create([
             'name' => 'Smith Yañez',
-            'email' => 'smith@example.com',
+            'email' => 'jhoan71002@gmail.com',
+            'password' => bcrypt('645Bici7'),
         ])->attachRole('superadministrator');
 
-        User::factory()->create([
-            'name' => 'Diego Yañez',
-            'email' => 'diego@example.com',
-        ])->attachRole('administrator');
+        // User::factory()->create([
+        //     'name' => 'Diego Yañez',
+        //     'email' => 'diego@example.com',
+        // ])->attachRole('administrator');
 
-        User::factory()->create([
-            'name' => 'Dayana Yañez',
-            'email' => 'dayana@example.com',
-        ])->attachRole('user');
+        // User::factory()->create([
+        //     'name' => 'Dayana Yañez',
+        //     'email' => 'dayana@example.com',
+        // ])->attachRole('user');
 
     }
 }
