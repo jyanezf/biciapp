@@ -30,7 +30,11 @@
                     </div>
                     <div class="flex-grow-1">
                         <span class="fw-semibold d-block">{{ auth()->user()->name }}</span>
-                        <small class="text-muted">{{ auth()->user()->roles()->first()->display_name }}</small>
+                        @isset(auth()->user()->roles()->first()->display_name)
+                            <small class="text-muted">{{ auth()->user()->roles()->first()->display_name }}</small>
+                        @else
+                            <small class="text-muted">Estudiante</small>
+                        @endisset
                     </div>
                 </div>
             </a>

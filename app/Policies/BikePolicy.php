@@ -32,7 +32,7 @@ class BikePolicy
      */
     public function viewAny(User $user)
     {
-        return $user->isAbleTo('bikes-read');
+        return true;
     }
 
     /**
