@@ -15,7 +15,6 @@ return [
         'superadministrator' => [
             'users' => 'c,r,u,d',
             'bikes' => 'c,r,u,d',
-            'apartments' => 'c,r,u,d',
         ],
         'administrator' => [
             'users' => 'c,r,u,d',
