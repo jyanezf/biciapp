@@ -3,6 +3,14 @@
     <x-slot:title>
         Actualizar bicicleta
     </x-slot>
+    <ul class="nav nav-pills flex-column flex-md-row mb-3">
+        <li class="nav-item">
+            <a
+                class="nav-link active"
+                href="{{ route('bikes.index') }}"
+            > Bicicletas</a>
+        </li>
+    </ul>
     <form
         action={{ route('bikes.update', $bike) }}
         class="basic-info"

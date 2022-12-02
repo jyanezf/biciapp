@@ -1,8 +1,16 @@
 <x-app>
     {{-- Page title --}}
     <x-slot:title>
-        Registrar bicicleta
+        Registrar bicicletas
     </x-slot>
+    <ul class="nav nav-pills flex-column flex-md-row mb-3">
+        <li class="nav-item">
+            <a
+                class="nav-link active"
+                href="{{ route('bikes.index') }}"
+            > Bicicletas</a>
+        </li>
+    </ul>
     <form
         action={{ route('bikes.store', $bike) }}
         class="basic-info needs-validation"

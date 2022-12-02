@@ -13,10 +13,10 @@
         <div>
             <a
                 class="footer-link me-4"
-                href="https://themeselection.com/license/"
+                href="https://themeselection.com/item/sneat-free-bootstrap-html-admin-template/"
                 target="_blank"
             >
-                License
+            Licencia
             </a>
             <a
                 class="footer-link me-4"
@@ -28,7 +28,7 @@
             <a
                 class="footer-link"
                 href="javascript:void(0)"
-            >Terms &amp; Conditions</a>
+            >Terminos &amp; Condiciones</a>
         </div>
     </div>
 </footer>
